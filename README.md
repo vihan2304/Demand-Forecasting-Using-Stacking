@@ -181,7 +181,7 @@ A `RandomForestRegressor` was used as the stacking meta-model.
 
 Comparison between actual demand and stacking ensemble predictions.
 
-![Stacking Forecast](stacking_comparison.png)
+![Stacking Forecast](images/stacking_comparison.png)
 
 ## 🔀 Stacking Strategy
 
