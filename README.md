@@ -198,6 +198,11 @@ After model comparison:
 These models showed comparatively weaker forecasting performance and higher forecasting errors.
 
 ---
+## 📊 Forecasting Model Comparison
+
+The following graph compares the forecasting performance of all trained machine learning models using Average SMAPE.
+
+![Model Comparison]()
 
 # 🎯 High Accuracy Forecast Analysis
 
