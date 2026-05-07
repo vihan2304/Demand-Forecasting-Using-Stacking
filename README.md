@@ -1,6 +1,8 @@
-# Demand Forecasting using Ensemble Machine Learning & Stacking
+# 📈 Demand Forecasting using Ensemble Machine Learning & Stacking
 
-## Project Overview
+---
+
+# 📌 Project Overview
 
 This project implements an end-to-end demand forecasting pipeline using multiple machine learning models and stacking ensemble techniques.
 
@@ -10,9 +12,10 @@ The project focuses specifically on forecasting high-demand `RUNNER` category pr
 
 ---
 
-# Problem Statement
+# 🎯 Problem Statement
 
 Accurate demand forecasting is critical for:
+
 - inventory optimization
 - supply chain planning
 - stock availability
@@ -20,12 +23,14 @@ Accurate demand forecasting is critical for:
 - demand sensing
 
 Traditional forecasting models often struggle with:
+
 - highly skewed demand distributions
 - intermittent demand behavior
 - nonlinear sales patterns
 - varying demand volumes across products
 
 This project addresses these challenges using:
+
 - ensemble machine learning models
 - Out-of-Time forecasting validation
 - stacking ensemble learning
@@ -33,9 +38,10 @@ This project addresses these challenges using:
 
 ---
 
-# Dataset Information
+# 📂 Dataset Information
 
 The dataset contains:
+
 - product-region level demand information
 - historical billed quantities
 - engineered lag features
@@ -45,53 +51,62 @@ The dataset contains:
 
 The forecasting target used in this project is:
 
-`BilledQuantity_lead1`
+```python
+BilledQuantity_lead1
+```
 
 which represents future demand forecasting.
 
 ---
 
-# Engineered Features Used
+# ⚙️ Engineered Features Used
 
 The dataset already contained engineered forecasting features such as:
 
-## Lag Features
+## 🔁 Lag Features
+
 - `BilledQuantity_lag0`
 - `BilledQuantity_lag1`
 - `BilledQuantity_lag2`
 
-## Rolling Statistical Features
+## 📊 Rolling Statistical Features
+
 - `roll_mean_3`
 - `roll_std_3`
 - `cv_3`
 
-## Trend & Momentum Features
+## 📈 Trend & Momentum Features
+
 - `momentum`
 - `trend_idx`
 
-## Demand Stability Features
+## 📦 Demand Stability Features
+
 - `stock_cover`
 - `zero_flag`
 - `zero_rate_6`
 
-## Time Features
+## 📅 Time Features
+
 - `Month`
 - `Year`
 - `SalesMonth`
 
 ---
 
-# Product Filtering
+# 🏷️ Product Filtering
 
 The dataset was specifically filtered for:
 
-`Category == 'RUNNER'`
+```python
+Category == 'RUNNER'
+```
 
 Runner products represent high-demand and frequently sold products, making them highly relevant for demand forecasting and inventory planning.
 
 ---
 
-# Forecasting Models Used
+# 🤖 Forecasting Models Used
 
 The following models were initially trained and evaluated:
 
@@ -103,13 +118,16 @@ The following models were initially trained and evaluated:
 
 ---
 
-# Hyperparameter Tuning
+# 🛠️ Hyperparameter Tuning
 
 Hyperparameter tuning was performed using:
 
-`RandomizedSearchCV`
+```python
+RandomizedSearchCV
+```
 
 for:
+
 - XGBoost
 - Random Forest
 - LightGBM
@@ -118,7 +136,7 @@ The best parameters obtained from tuning were used for final model training.
 
 ---
 
-# Evaluation Metrics
+# 📏 Evaluation Metrics
 
 The forecasting models were evaluated using:
 
@@ -128,11 +146,11 @@ The forecasting models were evaluated using:
 
 ---
 
-# Out-of-Time (OOT) Validation
+# 🕒 Out-of-Time (OOT) Validation
 
 A time-series aware Out-of-Time validation strategy was used.
 
-OOT Months:
+## 📆 OOT Months
 
 - Oct 2025
 - Nov 2025
@@ -143,7 +161,7 @@ OOT Months:
 
 ---
 
-# Stacking Ensemble
+# 🧠 Stacking Ensemble
 
 The final ensemble model combined predictions from:
 
@@ -153,7 +171,7 @@ The final ensemble model combined predictions from:
 
 A `RandomForestRegressor` was used as the stacking meta-model.
 
-## Stacking Strategy
+## 🔀 Stacking Strategy
 
 | Usage | Months |
 |---|---|
@@ -162,16 +180,18 @@ A `RandomForestRegressor` was used as the stacking meta-model.
 
 ---
 
-# Model Selection Decision
+# 🏆 Model Selection Decision
 
 After model comparison:
 
-## Final Selected Models
+## ✅ Final Selected Models
+
 - XGBoost
 - Random Forest
 - LightGBM
 
-## Removed Models
+## ❌ Removed Models
+
 - Decision Tree
 - Ridge Regression
 
@@ -179,22 +199,26 @@ These models showed comparatively weaker forecasting performance and higher fore
 
 ---
 
-# High Accuracy Forecast Analysis
+# 🎯 High Accuracy Forecast Analysis
 
 Separate analysis was performed for forecasts with:
 
-`SMAPE < 20%`
+```python
+SMAPE < 20%
+```
 
 to identify:
+
 - highly reliable forecasts
 - stable demand patterns
 - high-confidence predictions
 
 ---
 
-# Visualizations Included
+# 📊 Visualizations Included
 
 The notebook includes:
+
 - target distribution analysis
 - monthly demand trend visualization
 - model comparison charts
@@ -204,7 +228,7 @@ The notebook includes:
 
 ---
 
-# Project Structure
+# 🗂️ Project Structure
 
 ```text
 ├── data/
@@ -219,11 +243,28 @@ The notebook includes:
 │   ├── stacking_results.csv
 ├── README.md
 ```
-# Conclusion
+
+---
+
+# 🚀 Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- XGBoost
+- LightGBM
+- Matplotlib
+- Joblib
+
+---
+
+# ✅ Conclusion
 
 This project demonstrates a complete machine learning demand forecasting pipeline using ensemble learning and stacking techniques.
 
 The workflow included:
+
 - Out-of-Time forecasting
 - lag and rolling statistical feature utilization
 - hyperparameter tuning
@@ -232,11 +273,13 @@ The workflow included:
 - stacking ensemble forecasting
 
 The forecasting models were evaluated using:
+
 - SMAPE
 - RMSE
 - WAPE
 
 Among the trained models:
+
 - XGBoost
 - Random Forest
 - LightGBM
@@ -248,6 +291,7 @@ Decision Tree and Ridge Regression showed comparatively weaker forecasting perfo
 A stacking ensemble using Random Forest as the meta-model was implemented to combine predictions from the best-performing models and improve forecasting stability.
 
 The project also included:
+
 - high-accuracy forecast filtering
 - low SMAPE analysis
 - Out-of-Time validation
@@ -257,11 +301,17 @@ Overall, the final forecasting pipeline demonstrated effective demand prediction
 
 ---
 
-# Future Improvements
+# 🔮 Future Improvements
 
 Possible future enhancements include:
 
 - separate forecasting pipelines for low-volume and high-volume products
+- advanced time-series forecasting models
+- probabilistic forecasting
+- feature importance analysis
+- deep learning based forecasting approaches
+- automated retraining pipelines
+- deployment using APIs or dashboards
 - advanced time-series forecasting models
 - probabilistic forecasting
 - feature importance analysis
