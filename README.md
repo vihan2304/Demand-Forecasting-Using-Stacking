@@ -63,7 +63,7 @@ which represents future demand forecasting.
 
 The target variable was log transformed to stabilize skewed demand behavior and improve forecasting model learning.
 
-![Target Distribution](output.png)
+![Target Distribution](images/output.png)
 
 # ⚙️ Engineered Features Used
 
