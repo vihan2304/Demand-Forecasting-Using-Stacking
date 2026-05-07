@@ -59,6 +59,12 @@ which represents future demand forecasting.
 
 ---
 
+## 📉 Log Transformed Target Distribution
+
+The target variable was log transformed to stabilize skewed demand behavior and improve forecasting model learning.
+
+![Target Distribution](output.png)
+
 # ⚙️ Engineered Features Used
 
 The dataset already contained engineered forecasting features such as:
@@ -171,6 +177,12 @@ The final ensemble model combined predictions from:
 
 A `RandomForestRegressor` was used as the stacking meta-model.
 
+## 📈 Stacking Ensemble Forecast Visualization
+
+Comparison between actual demand and stacking ensemble predictions.
+
+![Stacking Forecast](stacking_comparison.png)
+
 ## 🔀 Stacking Strategy
 
 | Usage | Months |
@@ -202,11 +214,11 @@ These models showed comparatively weaker forecasting performance and higher fore
 
 The following graph compares the forecasting performance of all trained machine learning models using Average SMAPE.
 
-![Model Comparison]()
+![Model Comparison](comparison.png)
 
 # 🎯 High Accuracy Forecast Analysis
 
-Separate analysis was performed for forecasts with:
+Separate analysis was performed for forecasts with:    
 
 ```python
 SMAPE < 20%
@@ -323,3 +335,14 @@ Possible future enhancements include:
 - deep learning based forecasting approaches
 - automated retraining pipelines
 - deployment using APIs or dashboards
+
+- comparison.ong.png
+Add files via upload
+3 minutes ago
+output.png
+Add files via upload
+3 minutes ago
+output.png 1.png
+Add files via upload
+3 minutes ago
+stacking_comparison.png
