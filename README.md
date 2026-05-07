@@ -214,7 +214,7 @@ These models showed comparatively weaker forecasting performance and higher fore
 
 The following graph compares the forecasting performance of all trained machine learning models using Average SMAPE.
 
-![Model Comparison](comparison.png)
+![Model Comparison](images/comparison.ong.png)
 
 # 🎯 High Accuracy Forecast Analysis
 
@@ -335,14 +335,3 @@ Possible future enhancements include:
 - deep learning based forecasting approaches
 - automated retraining pipelines
 - deployment using APIs or dashboards
-
-- comparison.ong.png
-Add files via upload
-3 minutes ago
-output.png
-Add files via upload
-3 minutes ago
-output.png 1.png
-Add files via upload
-3 minutes ago
-stacking_comparison.png
