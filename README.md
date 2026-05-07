@@ -218,7 +218,7 @@ The notebook includes:
 │   ├── forecast_results.csv
 │   ├── stacking_results.csv
 ├── README.md
-
+```
 # Conclusion
 
 This project demonstrates a complete machine learning demand forecasting pipeline using ensemble learning and stacking techniques.
